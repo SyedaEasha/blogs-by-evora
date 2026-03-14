@@ -1,4 +1,66 @@
-baseURL = 'https://effervescent-cheesecake-e1a701.netlify.app/'
-languageCode = 'en-us'
-title = 'My New Hugo Site'
-theme = 'ananke'
+baseURL = "http://localhost:1313/"
+languageCode = "en-us"
+title = "BLOGS BY EVORA"
+theme = "PaperMod"
+
+[pagination]
+pagerSize = 10
+
+[params]
+defaultTheme = "light"
+disableThemeToggle = true
+comments = false
+ShowReadingTime = true
+ShowShareButtons = false
+ShowPostNavLinks = true
+ShowBreadCrumbs = true
+ShowCodeCopyButtons = true
+ShowToc = true
+TocOpen = false
+ShowAllPagesInArchive = true
+mainSections = ["posts"]
+
+[params.profileMode]
+enabled = true
+title = "Syeda Easha"
+subtitle = "exploring and learning"
+imageUrl = "/images/profile.png"
+imageTitle = "Syeda Easha"
+imageWidth = 190
+imageHeight = 190
+
+[[params.profileMode.buttons]]
+name = "About Me"
+url = "/about/"
+
+[[params.profileMode.buttons]]
+name = "Tech Blogs"
+url = "/posts/"
+
+[[params.socialIcons]]
+name = "github"
+url = "https://github.com/SyedaEasha"
+
+[[params.socialIcons]]
+name = "linkedin"
+url = "https://linkedin.com/in/SyedaEasha"
+
+[menu]
+
+[[menu.main]]
+identifier = "about"
+name = "About"
+url = "/about/"
+weight = 10
+
+[[menu.main]]
+identifier = "posts"
+name = "Blogs"
+url = "/posts/"
+weight = 20
+
+[outputs]
+home = ["HTML"]
+section = ["HTML"]
+taxonomy = ["HTML"]
+term = ["HTML"]

@@ -1,0 +1,12 @@
+[params]
+ShowReadingTime = true
+ShowShareButtons = true
+
+[params.homeInfoParams]
+Title = "Blogs by Evora"
+Content = "My Tech Journey"
+paginate = 5
+
+[params.profileMode]
+enabled = false
+
