@@ -1,4 +1,4 @@
-baseURL = "http://blogs-by-evora.netlify.app/"
+baseURL = "https://blogs-by-evora.pages.dev/"
 languageCode = "en-us"
 title = "BLOGS BY EVORA"
 theme = "PaperMod"
