@@ -1,8 +1,8 @@
-baseURL = "https://blogs-by-evora.pages.dev/"
+baseURL = "https://syedaeasha.github.io/blogs-by-evora/"
 languageCode = "en-us"
 title = "BLOGS BY EVORA"
 theme = "PaperMod"
-
+publishDir = "docs"
 [pagination]
 pagerSize = 10
 

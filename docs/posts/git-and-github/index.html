@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto" data-theme="light">
+
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>Git and GitHub | BLOGS BY EVORA</title>
+<meta name="keywords" content="Git, GitHub, Version Control, Ubuntu">
+<meta name="description" content="A beginner friendly guide to Git, GitHub and pushing your first repository.">
+<meta name="author" content="Syeda Easha">
+<link rel="canonical" href="https://syedaeasha.github.io/blogs-by-evora/posts/git-and-github/">
+<link crossorigin="anonymous" href="/blogs-by-evora/assets/css/stylesheet.d8f412d04885c7199a0d3fb1e2606095d59a398a82907202a966d639d562ad6f.css" integrity="sha256-2PQS0EiFxxmaDT&#43;x4mBgldWaOYqCkHICqWbWOdVirW8=" rel="preload stylesheet" as="style">
+<link rel="icon" href="https://syedaeasha.github.io/blogs-by-evora/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://syedaeasha.github.io/blogs-by-evora/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://syedaeasha.github.io/blogs-by-evora/favicon-32x32.png">
+<link rel="apple-touch-icon" href="https://syedaeasha.github.io/blogs-by-evora/apple-touch-icon.png">
+<link rel="mask-icon" href="https://syedaeasha.github.io/blogs-by-evora/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="en" href="https://syedaeasha.github.io/blogs-by-evora/posts/git-and-github/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+</noscript>
+<style>
+body {
+background: #020617 !important;
+background-image: radial-gradient(circle at 50% 50%, #1e3a8a 0%, #020617 100%) !important;
+overflow-x: hidden;
+}
+
+</style>
+
+<meta property="og:url" content="https://syedaeasha.github.io/blogs-by-evora/posts/git-and-github/">
+  <meta property="og:site_name" content="BLOGS BY EVORA">
+  <meta property="og:title" content="Git and GitHub">
+  <meta property="og:description" content="A beginner friendly guide to Git, GitHub and pushing your first repository.">
+  <meta property="og:locale" content="en-us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2026-03-13T00:00:00+00:00">
+    <meta property="article:modified_time" content="2026-03-13T00:00:00+00:00">
+    <meta property="article:tag" content="Git">
+    <meta property="article:tag" content="GitHub">
+    <meta property="article:tag" content="Version Control">
+    <meta property="article:tag" content="Ubuntu">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Git and GitHub">
+<meta name="twitter:description" content="A beginner friendly guide to Git, GitHub and pushing your first repository.">
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Posts",
+      "item": "https://syedaeasha.github.io/blogs-by-evora/posts/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "Git and GitHub",
+      "item": "https://syedaeasha.github.io/blogs-by-evora/posts/git-and-github/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Git and GitHub",
+  "name": "Git and GitHub",
+  "description": "A beginner friendly guide to Git, GitHub and pushing your first repository.",
+  "keywords": [
+    "Git", "GitHub", "Version Control", "Ubuntu"
+  ],
+  "articleBody": "Introduction Git and GitHub are two essential tools for developers. They help track changes in projects, collaborate with others, and manage code efficiently.\nIn this blog, we will understand the concept of version control systems, install Git on Ubuntu, generate an SSH key, and push a project to GitHub.\nConcept of Version Control System A Version Control System (VCS) helps developers manage and track changes in source code over time.\nIt allows you to:\ntrack file changes revert to previous versions collaborate with others maintain a history of project development There are two main types of version control systems.\nCentralized Version Control In centralized systems, all developers connect to a central server where the project history is stored.\nDistributed Version Control In distributed systems, every developer has a complete copy of the repository history on their local machine.\nGit is a distributed version control system.\nIntroduction to Git Git is a popular version control tool used by developers to manage and track code changes.\nGit allows developers to:\ntrack project history collaborate with teams experiment safely using branches revert mistakes easily Git Terminology Repository A repository is a storage location where your project files and version history are saved.\nStaging Area The staging area holds changes that will be included in the next commit.\nCommit A commit is a snapshot of your project at a specific time.\nBranch Branches allow developers to work on different features without affecting the main code.\nRemote A remote repository is a version of your project hosted online.\nExample: GitHub.\nClone Cloning means downloading a complete copy of a repository to your local machine.\nInstalling Git on Ubuntu Step 1: Update Packages First update your package list. sudo apt update\nStep 2: Install Git sudo apt install git -y\nStep 3: Verify Installation git –version\nIf a version number appears, Git has been installed successfully.\nStep 4: Configure Git Set your username: git config –global user.name “Your Name”\nSet your email:\ngit config –global user.email “youremail@example.com \"\nStep 5: Check Git Configuration git config –list\nGitHub on Ubuntu What is GitHub? GitHub is a cloud platform used to host Git repositories online. It helps developers store projects, collaborate with teams, and manage version history.\nCreate a GitHub Account Go to github.com Click Sign Up Enter your email, username, and password Verify your email Generate an SSH Key SSH keys allow your computer to communicate securely with GitHub.\nGenerate an SSH key:\nssh-keygen -t ed25519 -C “youremail@example.com \"\nPress Enter to save the key in the default location.\nStart the SSH agent:\neval “$(ssh-agent -s)”\nAdd the SSH key:\nssh-add ~/.ssh/id_ed25519\nCopy your public key:\ncat ~/.ssh/id_ed25519.pub\nAdd the copied key to GitHub → Settings → SSH Keys.\nCreate and Push a Repository Step 1: Create a Project Folder mkdir learning cd learning\nStep 2: Create a File echo “Hello GitHub” \u003e readme.txt\nStep 3: Initialize Git Repository git init\nStep 4: Add Files git add .\nStep 5: Commit Changes git commit -m “Initial commit”\nStep 6: Add Remote Repository git remote add origin git@github.com :yourusername/learning.git\nStep 7: Verify Remote git remote -v\nStep 8: Push to GitHub git push -u origin main\nNow open your GitHub repository and you should see your project files uploaded successfully.\nFinal Thoughts Git and GitHub are essential tools for every developer. Learning how to manage repositories, commit changes, and push code to GitHub will greatly improve your development workflow.\nWhether you are working alone or in a team, Git makes project management easier and more organized.\n",
+  "wordCount" : "588",
+  "inLanguage": "en",
+  "datePublished": "2026-03-13T00:00:00Z",
+  "dateModified": "2026-03-13T00:00:00Z",
+  "author":{
+    "@type": "Person",
+    "name": "Syeda Easha"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://syedaeasha.github.io/blogs-by-evora/posts/git-and-github/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "BLOGS BY EVORA",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://syedaeasha.github.io/blogs-by-evora/favicon.ico"
+    }
+  }
+}
+</script>
+</head>
+<body id="top">
+    <header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="https://syedaeasha.github.io/blogs-by-evora/" accesskey="h" title="BLOGS BY EVORA (Alt + H)">BLOGS BY EVORA</a>
+            <div class="logo-switches">
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="https://syedaeasha.github.io/blogs-by-evora/about/" title="About">
+                    <span>About</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://syedaeasha.github.io/blogs-by-evora/posts/" title="Blogs">
+                    <span>Blogs</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    <div class="breadcrumbs"><a href="https://syedaeasha.github.io/blogs-by-evora/">Home</a>&nbsp;»&nbsp;<a href="https://syedaeasha.github.io/blogs-by-evora/posts/">Posts</a></div>
+    <h1 class="post-title entry-hint-parent">
+      Git and GitHub
+    </h1>
+    <div class="post-description">
+      A beginner friendly guide to Git, GitHub and pushing your first repository.
+    </div>
+    <div class="post-meta"><span title='2026-03-13 00:00:00 +0000 UTC'>March 13, 2026</span>&nbsp;·&nbsp;<span>3 min</span>&nbsp;·&nbsp;<span>Syeda Easha</span>
+
+</div>
+  </header> <div class="toc">
+    <details >
+        <summary accesskey="c" title="(Alt + C)">
+            <span class="details">Table of Contents</span>
+        </summary>
+
+        <div class="inner"><ul><ul>
+                <li>
+                    <a href="#introduction" aria-label="Introduction">Introduction</a></li>
+                <li>
+                    <a href="#concept-of-version-control-system" aria-label="Concept of Version Control System">Concept of Version Control System</a><ul>
+                        
+                <li>
+                    <a href="#centralized-version-control" aria-label="Centralized Version Control">Centralized Version Control</a></li>
+                <li>
+                    <a href="#distributed-version-control" aria-label="Distributed Version Control">Distributed Version Control</a></li></ul>
+                </li>
+                <li>
+                    <a href="#introduction-to-git" aria-label="Introduction to Git">Introduction to Git</a></li>
+                <li>
+                    <a href="#git-terminology" aria-label="Git Terminology">Git Terminology</a><ul>
+                        
+                <li>
+                    <a href="#repository" aria-label="Repository">Repository</a></li>
+                <li>
+                    <a href="#staging-area" aria-label="Staging Area">Staging Area</a></li>
+                <li>
+                    <a href="#commit" aria-label="Commit">Commit</a></li>
+                <li>
+                    <a href="#branch" aria-label="Branch">Branch</a></li>
+                <li>
+                    <a href="#remote" aria-label="Remote">Remote</a></li>
+                <li>
+                    <a href="#clone" aria-label="Clone">Clone</a></li></ul>
+                </li></ul>
+                    
+                <li>
+                    <a href="#installing-git-on-ubuntu" aria-label="Installing Git on Ubuntu">Installing Git on Ubuntu</a><ul>
+                        
+                <li>
+                    <a href="#step-1-update-packages" aria-label="Step 1: Update Packages">Step 1: Update Packages</a></li>
+                <li>
+                    <a href="#step-2-install-git" aria-label="Step 2: Install Git">Step 2: Install Git</a></li>
+                <li>
+                    <a href="#step-3-verify-installation" aria-label="Step 3: Verify Installation">Step 3: Verify Installation</a></li>
+                <li>
+                    <a href="#step-4-configure-git" aria-label="Step 4: Configure Git">Step 4: Configure Git</a></li>
+                <li>
+                    <a href="#step-5-check-git-configuration" aria-label="Step 5: Check Git Configuration">Step 5: Check Git Configuration</a></li></ul>
+                </li>
+                <li>
+                    <a href="#github-on-ubuntu" aria-label="GitHub on Ubuntu">GitHub on Ubuntu</a><ul>
+                        
+                <li>
+                    <a href="#what-is-github" aria-label="What is GitHub?">What is GitHub?</a></li>
+                <li>
+                    <a href="#create-a-github-account" aria-label="Create a GitHub Account">Create a GitHub Account</a></li></ul>
+                </li>
+                <li>
+                    <a href="#generate-an-ssh-key" aria-label="Generate an SSH Key">Generate an SSH Key</a></li>
+                <li>
+                    <a href="#create-and-push-a-repository" aria-label="Create and Push a Repository">Create and Push a Repository</a><ul>
+                        
+                <li>
+                    <a href="#step-1-create-a-project-folder" aria-label="Step 1: Create a Project Folder">Step 1: Create a Project Folder</a></li>
+                <li>
+                    <a href="#step-2-create-a-file" aria-label="Step 2: Create a File">Step 2: Create a File</a></li>
+                <li>
+                    <a href="#step-3-initialize-git-repository" aria-label="Step 3: Initialize Git Repository">Step 3: Initialize Git Repository</a></li>
+                <li>
+                    <a href="#step-4-add-files" aria-label="Step 4: Add Files">Step 4: Add Files</a></li>
+                <li>
+                    <a href="#step-5-commit-changes" aria-label="Step 5: Commit Changes">Step 5: Commit Changes</a></li>
+                <li>
+                    <a href="#step-6-add-remote-repository" aria-label="Step 6: Add Remote Repository">Step 6: Add Remote Repository</a></li>
+                <li>
+                    <a href="#step-7-verify-remote" aria-label="Step 7: Verify Remote">Step 7: Verify Remote</a></li>
+                <li>
+                    <a href="#step-8-push-to-github" aria-label="Step 8: Push to GitHub">Step 8: Push to GitHub</a></li></ul>
+                </li>
+                <li>
+                    <a href="#final-thoughts" aria-label="Final Thoughts">Final Thoughts</a>
+                </li>
+            </ul>
+        </div>
+    </details>
+</div>
+
+  <div class="post-content"><h2 id="introduction">Introduction<a hidden class="anchor" aria-hidden="true" href="#introduction">#</a></h2>
+<p>Git and GitHub are two essential tools for developers. They help track changes in projects, collaborate with others, and manage code efficiently.</p>
+<p>In this blog, we will understand the concept of version control systems, install Git on Ubuntu, generate an SSH key, and push a project to GitHub.</p>
+<hr>
+<h2 id="concept-of-version-control-system">Concept of Version Control System<a hidden class="anchor" aria-hidden="true" href="#concept-of-version-control-system">#</a></h2>
+<p>A <strong>Version Control System (VCS)</strong> helps developers manage and track changes in source code over time.</p>
+<p>It allows you to:</p>
+<ul>
+<li>track file changes</li>
+<li>revert to previous versions</li>
+<li>collaborate with others</li>
+<li>maintain a history of project development</li>
+</ul>
+<p>There are two main types of version control systems.</p>
+<h3 id="centralized-version-control">Centralized Version Control<a hidden class="anchor" aria-hidden="true" href="#centralized-version-control">#</a></h3>
+<p>In centralized systems, all developers connect to a central server where the project history is stored.</p>
+<h3 id="distributed-version-control">Distributed Version Control<a hidden class="anchor" aria-hidden="true" href="#distributed-version-control">#</a></h3>
+<p>In distributed systems, every developer has a complete copy of the repository history on their local machine.</p>
+<p>Git is a <strong>distributed version control system</strong>.</p>
+<hr>
+<h2 id="introduction-to-git">Introduction to Git<a hidden class="anchor" aria-hidden="true" href="#introduction-to-git">#</a></h2>
+<p>Git is a popular version control tool used by developers to manage and track code changes.</p>
+<p>Git allows developers to:</p>
+<ul>
+<li>track project history</li>
+<li>collaborate with teams</li>
+<li>experiment safely using branches</li>
+<li>revert mistakes easily</li>
+</ul>
+<hr>
+<h2 id="git-terminology">Git Terminology<a hidden class="anchor" aria-hidden="true" href="#git-terminology">#</a></h2>
+<h3 id="repository">Repository<a hidden class="anchor" aria-hidden="true" href="#repository">#</a></h3>
+<p>A repository is a storage location where your project files and version history are saved.</p>
+<h3 id="staging-area">Staging Area<a hidden class="anchor" aria-hidden="true" href="#staging-area">#</a></h3>
+<p>The staging area holds changes that will be included in the next commit.</p>
+<h3 id="commit">Commit<a hidden class="anchor" aria-hidden="true" href="#commit">#</a></h3>
+<p>A commit is a snapshot of your project at a specific time.</p>
+<h3 id="branch">Branch<a hidden class="anchor" aria-hidden="true" href="#branch">#</a></h3>
+<p>Branches allow developers to work on different features without affecting the main code.</p>
+<h3 id="remote">Remote<a hidden class="anchor" aria-hidden="true" href="#remote">#</a></h3>
+<p>A remote repository is a version of your project hosted online.</p>
+<p>Example: GitHub.</p>
+<h3 id="clone">Clone<a hidden class="anchor" aria-hidden="true" href="#clone">#</a></h3>
+<p>Cloning means downloading a complete copy of a repository to your local machine.</p>
+<hr>
+<h1 id="installing-git-on-ubuntu">Installing Git on Ubuntu<a hidden class="anchor" aria-hidden="true" href="#installing-git-on-ubuntu">#</a></h1>
+<h2 id="step-1-update-packages">Step 1: Update Packages<a hidden class="anchor" aria-hidden="true" href="#step-1-update-packages">#</a></h2>
+<p>First update your package list.
+sudo apt update</p>
+<h2 id="step-2-install-git">Step 2: Install Git<a hidden class="anchor" aria-hidden="true" href="#step-2-install-git">#</a></h2>
+<p>sudo apt install git -y</p>
+<h2 id="step-3-verify-installation">Step 3: Verify Installation<a hidden class="anchor" aria-hidden="true" href="#step-3-verify-installation">#</a></h2>
+<p>git &ndash;version</p>
+<p>If a version number appears, Git has been installed successfully.</p>
+<hr>
+<h2 id="step-4-configure-git">Step 4: Configure Git<a hidden class="anchor" aria-hidden="true" href="#step-4-configure-git">#</a></h2>
+<p>Set your username:
+git config &ndash;global user.name &ldquo;Your Name&rdquo;</p>
+<p>Set your email:</p>
+<p>git config &ndash;global user.email &ldquo;<a href="mailto:youremail@example.com">youremail@example.com</a>
+&quot;</p>
+<h2 id="step-5-check-git-configuration">Step 5: Check Git Configuration<a hidden class="anchor" aria-hidden="true" href="#step-5-check-git-configuration">#</a></h2>
+<p>git config &ndash;list</p>
+<hr>
+<h1 id="github-on-ubuntu">GitHub on Ubuntu<a hidden class="anchor" aria-hidden="true" href="#github-on-ubuntu">#</a></h1>
+<h2 id="what-is-github">What is GitHub?<a hidden class="anchor" aria-hidden="true" href="#what-is-github">#</a></h2>
+<p>GitHub is a cloud platform used to host Git repositories online. It helps developers store projects, collaborate with teams, and manage version history.</p>
+<hr>
+<h2 id="create-a-github-account">Create a GitHub Account<a hidden class="anchor" aria-hidden="true" href="#create-a-github-account">#</a></h2>
+<ol>
+<li>Go to <strong>github.com</strong></li>
+<li>Click <strong>Sign Up</strong></li>
+<li>Enter your email, username, and password</li>
+<li>Verify your email</li>
+</ol>
+<hr>
+<h1 id="generate-an-ssh-key">Generate an SSH Key<a hidden class="anchor" aria-hidden="true" href="#generate-an-ssh-key">#</a></h1>
+<p>SSH keys allow your computer to communicate securely with GitHub.</p>
+<p>Generate an SSH key:</p>
+<p>ssh-keygen -t ed25519 -C &ldquo;<a href="mailto:youremail@example.com">youremail@example.com</a>
+&quot;</p>
+<p>Press <strong>Enter</strong> to save the key in the default location.</p>
+<p>Start the SSH agent:</p>
+<p>eval &ldquo;$(ssh-agent -s)&rdquo;</p>
+<p>Add the SSH key:</p>
+<p>ssh-add ~/.ssh/id_ed25519</p>
+<p>Copy your public key:</p>
+<p>cat ~/.ssh/id_ed25519.pub</p>
+<p>Add the copied key to <strong>GitHub → Settings → SSH Keys</strong>.</p>
+<hr>
+<h1 id="create-and-push-a-repository">Create and Push a Repository<a hidden class="anchor" aria-hidden="true" href="#create-and-push-a-repository">#</a></h1>
+<h2 id="step-1-create-a-project-folder">Step 1: Create a Project Folder<a hidden class="anchor" aria-hidden="true" href="#step-1-create-a-project-folder">#</a></h2>
+<p>mkdir learning
+cd learning</p>
+<hr>
+<h2 id="step-2-create-a-file">Step 2: Create a File<a hidden class="anchor" aria-hidden="true" href="#step-2-create-a-file">#</a></h2>
+<p>echo &ldquo;Hello GitHub&rdquo; &gt; readme.txt</p>
+<hr>
+<h2 id="step-3-initialize-git-repository">Step 3: Initialize Git Repository<a hidden class="anchor" aria-hidden="true" href="#step-3-initialize-git-repository">#</a></h2>
+<p>git init</p>
+<hr>
+<h2 id="step-4-add-files">Step 4: Add Files<a hidden class="anchor" aria-hidden="true" href="#step-4-add-files">#</a></h2>
+<p>git add .</p>
+<hr>
+<h2 id="step-5-commit-changes">Step 5: Commit Changes<a hidden class="anchor" aria-hidden="true" href="#step-5-commit-changes">#</a></h2>
+<p>git commit -m &ldquo;Initial commit&rdquo;</p>
+<hr>
+<h2 id="step-6-add-remote-repository">Step 6: Add Remote Repository<a hidden class="anchor" aria-hidden="true" href="#step-6-add-remote-repository">#</a></h2>
+<p>git remote add origin <a href="mailto:git@github.com">git@github.com</a>
+:yourusername/learning.git</p>
+<hr>
+<h2 id="step-7-verify-remote">Step 7: Verify Remote<a hidden class="anchor" aria-hidden="true" href="#step-7-verify-remote">#</a></h2>
+<p>git remote -v</p>
+<hr>
+<h2 id="step-8-push-to-github">Step 8: Push to GitHub<a hidden class="anchor" aria-hidden="true" href="#step-8-push-to-github">#</a></h2>
+<p>git push -u origin main</p>
+<p>Now open your GitHub repository and you should see your project files uploaded successfully.</p>
+<hr>
+<h1 id="final-thoughts">Final Thoughts<a hidden class="anchor" aria-hidden="true" href="#final-thoughts">#</a></h1>
+<p>Git and GitHub are essential tools for every developer. Learning how to manage repositories, commit changes, and push code to GitHub will greatly improve your development workflow.</p>
+<p>Whether you are working alone or in a team, Git makes project management easier and more organized.</p>
+<hr>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="https://syedaeasha.github.io/blogs-by-evora/tags/git/">Git</a></li>
+      <li><a href="https://syedaeasha.github.io/blogs-by-evora/tags/github/">GitHub</a></li>
+      <li><a href="https://syedaeasha.github.io/blogs-by-evora/tags/version-control/">Version Control</a></li>
+      <li><a href="https://syedaeasha.github.io/blogs-by-evora/tags/ubuntu/">Ubuntu</a></li>
+    </ul>
+<nav class="paginav">
+  <a class="next" href="https://syedaeasha.github.io/blogs-by-evora/posts/learning-latex/">
+    <span class="title">Next »</span>
+    <br>
+    <span>Learning LaTeX: A Beginner’s Introduction</span>
+  </a>
+</nav>
+
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+        <span>&copy; 2026 <a href="https://syedaeasha.github.io/blogs-by-evora/">BLOGS BY EVORA</a></span> · 
+
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu');
+    if (menu) {
+        
+        const scrollPosition = localStorage.getItem("menu-scroll-position");
+        if (scrollPosition) {
+            menu.scrollLeft = parseInt(scrollPosition, 10);
+        }
+        
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
+
+        const copybutton = document.createElement('button');
+        copybutton.classList.add('copy-code');
+        copybutton.innerHTML = 'copy';
+
+        function copyingDone() {
+            copybutton.innerHTML = 'copied!';
+            setTimeout(() => {
+                copybutton.innerHTML = 'copy';
+            }, 2000);
+        }
+
+        copybutton.addEventListener('click', (cb) => {
+            if ('clipboard' in navigator) {
+                navigator.clipboard.writeText(codeblock.textContent);
+                copyingDone();
+                return;
+            }
+
+            const range = document.createRange();
+            range.selectNodeContents(codeblock);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            try {
+                document.execCommand('copy');
+                copyingDone();
+            } catch (e) { };
+            selection.removeRange(range);
+        });
+
+        if (container.classList.contains("highlight")) {
+            container.appendChild(copybutton);
+        } else if (container.parentNode.firstChild == container) {
+            
+        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+            
+            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+        } else {
+            
+            codeblock.parentNode.appendChild(copybutton);
+        }
+    });
+</script>
+</body>
+
+</html>
